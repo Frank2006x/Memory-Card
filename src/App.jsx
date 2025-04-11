@@ -2,20 +2,14 @@ import { useState } from 'react'
 
 import './App.css'
 import Data from './service/Data'
-import Card from './components/Card';
+import CardBox from './components/CardBox';
 function App() {
   const [pokemon,setPokemon]=useState([]);
 
   return (
     <>
     <Data setPokemon={setPokemon}/>
-    <div className='container'>
-      {pokemon.map((element,index)=>
-        <Card name={element.name} url={element.url} key={index}/>
-      )
-      }
-
-    </div>
+    <CardBox pokemon={pokemon}/>
 
      
     </>
