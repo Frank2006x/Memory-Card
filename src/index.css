@@ -1,19 +1,46 @@
+#root {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 400px; 
+  height: 100vh;
+  background-color: #333; 
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
 .card-box {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
-  max-width: 40rem;
+  max-width: 40rem; /* Keep your original max-width */
   padding: 1rem;
   margin: auto;
+  margin-left: 620px; /* Sidebar width + some padding */
   justify-content: center;
   align-items: center;
   animation: fadeIn 1s ease-in;
   font-size: smaller;
 }
-.card>h3{
+
+/* Rest of your original card styles remain unchanged */
+.card > h3 {
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .card {
@@ -33,6 +60,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  font-size: smaller;
 }
 
 .card:hover {
@@ -41,17 +69,50 @@
 }
 
 .card > img {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
   z-index: 2;
 }
+
 body {
   background: linear-gradient(to right, #8f94fb, #4e54c8);
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+
+.side-bar h1, .side-bar h2, .side-bar h3 {
+  background: linear-gradient(45deg, #ff8a00, #e52e71, #b36cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card > h3 {
+  background: linear-gradient(225deg, #aeb64f, #00ff80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  font-weight: 600;
+}
+
+
+/* Optional: Add some animation to the gradient text */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.side-bar h1 {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
 }
