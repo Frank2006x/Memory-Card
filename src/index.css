@@ -116,3 +116,7 @@ body {
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
 }
+
+.score{
+  margin-top: 10rem;
+}

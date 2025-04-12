@@ -14,7 +14,7 @@ function Data({ setPokemon }) {
                     return { ...element, id: count++ };
                 });
                 setPokemon(pokeArray);
-                console.log(pokeArray);
+                // console.log(pokeArray);
             } catch (error) {
                 console.error(error);
             }
