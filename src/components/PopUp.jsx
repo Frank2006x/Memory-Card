@@ -1,4 +1,4 @@
-function PopUp({gameOver,setGameOver}) {
+function PopUp({setGameOver}) {
     function handleRestart(){
         setGameOver(false);
 

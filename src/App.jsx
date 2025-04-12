@@ -52,7 +52,6 @@ function App() {
     />
     {gameOver && createPortal(
       <PopUp
-      gameOver={gameOver}
       setGameOver={setGameOver}
       />,
       document.querySelector("#pop-up")
