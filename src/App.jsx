@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import Data from './service/Data'
@@ -10,6 +10,20 @@ function App() {
   const [bestScore,setBestScore]=useState(0);
   const [selected,setSelected]=useState([]);
   const [gameOver,setGameOver]=useState(false);
+  useEffect(()=>{
+    if(localStorage.getItem("best")){
+      setBestScore(localStorage.getItem("best"));
+    }else{
+      setBestScore(0);
+    }
+
+  },)
+  useEffect(()=>{
+    if(score>bestScore){
+      localStorage.setItem("best",score);
+    }
+
+  },[gameOver])
 
   return (
     <>
