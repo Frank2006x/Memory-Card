@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function Data({ setPokemon }) {
+function Data({ setPokemon ,gameOver}) {
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,7 +20,7 @@ function Data({ setPokemon }) {
             }
         };
         fetchData();
-    }, [setPokemon]);
+    }, [setPokemon,gameOver]);
 
     return null;
 }

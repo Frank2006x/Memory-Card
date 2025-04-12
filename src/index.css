@@ -120,3 +120,90 @@ body {
 .score{
   margin-top: 10rem;
 }
+
+/* Overlay to dim the background */
+.pop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Optional blur effect */
+}
+
+/* Pop-up box */
+.pop-box {
+  background: linear-gradient(145deg, #b36cff, #0075ff); /* Gradient background */
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pop-box:hover {
+  transform: scale(1); /* Zoom in effect when hovered */
+}
+
+/* Pokémon image styling */
+.pokemon-container {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.pokemon-img {
+  width: 220px;       /* Increased size */
+  height: auto;
+  border-radius: 10px;
+  
+}
+
+/* Game Over Title Styling */
+.game-over {
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Restart Button Styling */
+.restart-btn {
+  padding: 12px 25px;
+  background-color: #2ecc71; /* Green background */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effect */
+.restart-btn:hover {
+  background-color: #27ae60; /* Darker green */
+  transform: scale(1.05);
+}
+
+/* Button active effect */
+.restart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Button focus */
+.restart-btn:focus {
+  outline: none;
+}

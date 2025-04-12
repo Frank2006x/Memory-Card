@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom';
 
 import './App.css'
 import Data from './service/Data'
 import CardBox from './components/CardBox';
 import SideBar from './components/SideBar';
+import PopUp from './components/PopUp';
+
+
+
 function App() {
   const [pokemon,setPokemon]=useState([]);
   const [score,setScore]=useState(0);
@@ -23,12 +28,17 @@ function App() {
       localStorage.setItem("best",score);
     }
 
+  },[score])
+  useEffect(()=>{
+      setScore(0);
+      setSelected([]);
+      
   },[gameOver])
 
   return (
     <>
     <SideBar score={score} bestScore={bestScore}/>
-    <Data setPokemon={setPokemon}/>
+    <Data setPokemon={setPokemon} gameOver={gameOver}/>
     
     <CardBox 
     pokemon={pokemon}
@@ -40,6 +50,13 @@ function App() {
     score={score}
     setScore={setScore}
     />
+    {gameOver && createPortal(
+      <PopUp
+      gameOver={gameOver}
+      setGameOver={setGameOver}
+      />,
+      document.querySelector("#pop-up")
+    )}
     
 
 
