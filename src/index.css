@@ -207,3 +207,11 @@ body {
 .restart-btn:focus {
   outline: none;
 }
+.card:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.card:focus {
+  outline: none;
+  box-shadow: none;
+}
